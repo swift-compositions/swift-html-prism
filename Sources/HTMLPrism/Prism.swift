@@ -69,7 +69,7 @@ extension Prism.Head {
             }
 
         case .none:
-            HTML.Text("<!-- No theme -->")
+            HTML.Text("")
         }
 
         HTMLForEach(configuration.plugins) { plugin in
