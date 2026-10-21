@@ -19,13 +19,12 @@ extension Prism.Theme {
     }
 
     public func cssURL(cdnVersion: String) -> String {
-        if self == .default {
+        guard self != .default else {
             return
                 "https://cdnjs.cloudflare.com/ajax/libs/prism/\(cdnVersion)/themes/prism.min.css"
-        } else {
-            return
-                "https://cdnjs.cloudflare.com/ajax/libs/prism/\(cdnVersion)/themes/\(rawValue).min.css"
         }
+        return
+            "https://cdnjs.cloudflare.com/ajax/libs/prism/\(cdnVersion)/themes/\(rawValue).min.css"
     }
 }
 
